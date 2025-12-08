@@ -10,3 +10,4 @@ coverage/
 *.bak
 *.swp
 Thumbs.db
+*.json
