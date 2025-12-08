@@ -1,28 +1,59 @@
-.game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+ body { font-family: Arial, sans-serif; margin: 20px; }
+    .section { margin-bottom: 20px; }
+    h1 {
+      text-align: center;
+      color: #0767ed;
+    }
+    input, button { 
+      margin: 5px; 
+      padding: 8px; 
+   }
+    #output { 
+      margin-top: 20px; 
+      padding: 10px; 
+      border: 1px solid #ccc; 
+   }
+   .game-container {
+      max-width: 600px;
+       margin: 0 auto;
+      padding: 20px;
+      border: 2px solid #0767ed;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9;
+   }
+
+   .scores h2 {
+  margin-top: 20px;
+  color: #333;
 }
 
-.game-container .gamebtn {
-    padding: 15px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.scores ul {
+  padding-left: 20px;
 }
 
-.game-container input[type="text"] {
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    width: 200px;
+.scores li {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+#leaderboard {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+#leaderboard button {
+   margin-top: 10px;
+   padding: 8px 12px;
+  color: #0767ed;
 }

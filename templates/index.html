@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guessing Game</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Guessing Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="game-container">
-        <input type="text">
-        <button class="gamebtn">Guess</button>
-        <p>Instructions will appear here</p>
-    </div>
-</body>    
+  <h1>🎮 Guessing Game</h1>
+<div id = "container">
+<div class ="game-container">
+  <div class="section" id="name-section">
+    <h3>Step 1: Enter your name</h3>
+    <input type="text" id="playerName" placeholder="Your name">
+    <button onclick="setName()">Start</button>
+  </div>
+
+  <div class="section" id="difficulty-section" style="display:none;">
+    <h3>Step 2: Choose difficulty</h3>
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+      <option value="expert">Expert</option>
+    </select>
+    <button onclick="setDifficulty()">Start Game</button>
+  </div >
+
+  <div class="section" id="game-section" style="display:none;">
+    <h3>Step 3: Make a guess</h3>
+    <input type="number" id="guess" placeholder="Enter your guess">
+    <button onclick="makeGuess()">Submit Guess</button>
+  </div>
+
+  <div class="section" id="exit-section" style="display:none;">
+    <h3>Step 4: Finish</h3>
+    <button onclick="exitGame()">Exit Game</button>
+    <button onclick="showLeaderboard()">Show Leaderboard</button>
+    <button onclick="resetGame()">Continue</button>
+  </div>
+
+  <div id="output"></div>
+</div>
+</div>
+<div id="leaderboard">
+  <h2>🏆 Leaderboards</h2>
+  <div id="score-list"></div>
+  <button onclick="resetGame()">Continue Playing</button>
+</div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
 </html>
